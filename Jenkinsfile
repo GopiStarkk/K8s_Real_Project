@@ -12,7 +12,7 @@ pipeline {
         stage('SCM checkout') {
             steps {
                 script {
-                    git branch: 'main', credentialsId: 'git-cred', url: 'https://github.com/VenkatVGS/K8s_Real_Project.git'
+                    git branch: 'main', credentialsId: 'git-cred', url: 'https://github.com/GopiStarkk/K8s_Real_Project.git'
                 }
             }
         }
