@@ -2,9 +2,9 @@ pipeline {
     agent any
     environment {
         AWS_REGION = 'us-east-1' // Your AWS region
-        ECR_REPO = '881490104063.dkr.ecr.us-east-1.amazonaws.com/my_pvt_repo' // Your ECR repository URI
+        ECR_REPO = '229378727863.dkr.ecr.us-east-1.amazonaws.com/gopi' // Your ECR repository URI
         IMAGE_TAG = "v${BUILD_NUMBER}" // Dynamic version based on build number
-        EKS_CLUSTER_NAME = 'vgs_cluster' // Replace with your EKS cluster name
+        EKS_CLUSTER_NAME = 'gopi_cluster' // Replace with your EKS cluster name
         KUBECONFIG_PATH = '/opt/kube/config' // Path to kubeconfig file
         HELM_CHART_PATH = './Helm' // Path to your Helm chart
     }
@@ -49,7 +49,7 @@ pipeline {
                 script {
                     withCredentials([[
                         $class: 'AmazonWebServicesCredentialsBinding',
-                        credentialsId: 'aws-crendentails-vgs' // Your Jenkins AWS credentials ID
+                        credentialsId: 'aws-credentials-vgs' // Your Jenkins AWS credentials ID
                     ]]) {
                         def fullImageName = "${ECR_REPO}:${IMAGE_TAG}"
                         
@@ -70,7 +70,7 @@ pipeline {
                 script {
                     withCredentials([[
                         $class: 'AmazonWebServicesCredentialsBinding',
-                        credentialsId: 'aws-crendentails-vgs' // Replace with your Jenkins AWS credentials ID
+                        credentialsId: 'aws-credentials-vgs' // Replace with your Jenkins AWS credentials ID
                     ]]) {
                         
                         // Set KUBECONFIG environment variable
