@@ -1,84 +1,93 @@
-# Node.js Microservice CI/CD on Amazon EKS
+# Node.js CI/CD Deployment on Amazon EKS
 
 ## Overview
 
-This project demonstrates a complete DevOps implementation for deploying a Node.js application to Amazon EKS using a fully automated CI/CD pipeline.
+This project demonstrates an end-to-end DevOps implementation for deploying a Node.js application to Amazon EKS using a fully automated CI/CD pipeline.
 
-The solution integrates GitHub, Jenkins, SonarQube, Docker, Amazon ECR, Helm, Kubernetes, and NGINX Ingress Controller to automate application delivery from source code to production-ready Kubernetes workloads.
+The application is automatically scanned, containerized, published to Amazon ECR, and deployed into Kubernetes using Helm.
 
 ---
 
 ## Features
 
-- Node.js application
-- Dockerized application
-- Amazon ECR integration
-- Amazon EKS deployment
-- Helm Charts
-- Jenkins CI/CD
-- SonarQube Static Code Analysis
-- Kubernetes Secrets
-- NGINX Ingress
-- Automatic version tagging
-- Zero manual deployment
+GitHub Integration
 
----
+Jenkins Pipeline
 
-## Technology Stack
-
-- AWS EKS
-- Terraform
-- Jenkins
-- GitHub
-- Docker
-- Amazon ECR
-- Helm
-- Kubernetes
-- SonarQube
-- NGINX Ingress
-
----
-
-## Repository Structure
-
-```text
-src/
-Dockerfile
-Helm/
-Jenkinsfile
-docs/
-README.md
-```
-
----
-
-## CI/CD Workflow
-
-```
-GitHub
-   │
-   ▼
-Jenkins
-
-SCM Checkout
-
-SonarQube Scan
-
-npm install
+SonarQube Code Analysis
 
 Docker Build
 
-Push Image to Amazon ECR
+Amazon ECR
 
-Update kubeconfig
+Amazon EKS
 
 Helm Deployment
 
-Verify Kubernetes Resources
-```
+NGINX Ingress
+
+Automatic Versioning
+
+Zero Manual Deployment
 
 ---
 
-## Result
+## Technologies
 
-Every Git commit automatically deploys the latest application version into Amazon EKS.
+Node.js
+
+Docker
+
+Helm
+
+Kubernetes
+
+Amazon EKS
+
+Amazon ECR
+
+Jenkins
+
+SonarQube
+
+NGINX Ingress Controller
+
+GitHub
+
+---
+
+## CI/CD Flow
+
+Developer
+
+↓
+
+GitHub
+
+↓
+
+Jenkins
+
+↓
+
+SonarQube
+
+↓
+
+Docker Build
+
+↓
+
+Amazon ECR
+
+↓
+
+Amazon EKS
+
+↓
+
+Helm Upgrade
+
+↓
+
+Application Available
