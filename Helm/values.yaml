@@ -1,6 +1,6 @@
 #deployment.yaml
 #namespace: devops
-replicaCount: 2
+replicaCount: 1
 image:
   repository: 438825592133.dkr.ecr.us-east-1.amazonaws.com/gopi
   tag: latest
@@ -11,4 +11,4 @@ service:
   targetPort: 80
   containerPort: 80
   nodePort: 30008
-  type: ClusterIP
+  type: LoadBalancer
