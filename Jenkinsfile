@@ -2,7 +2,7 @@ pipeline {
     agent any
     environment {
         AWS_REGION = 'us-east-1' // Your AWS region
-        ECR_REPO = '229378727863.dkr.ecr.us-east-1.amazonaws.com/gopi' // Your ECR repository URI
+        ECR_REPO = '438825592133.dkr.ecr.us-east-1.amazonaws.com/gopi' // Your ECR repository URI
         IMAGE_TAG = "v${BUILD_NUMBER}" // Dynamic version based on build number
         EKS_CLUSTER_NAME = 'gopi_cluster' // Replace with your EKS cluster name
         KUBECONFIG_PATH = '/opt/kube/config' // Path to kubeconfig file
