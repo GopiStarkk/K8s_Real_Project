@@ -2,7 +2,7 @@
 #namespace: devops
 replicaCount: 2
 image:
-  repository: 229378727863.dkr.ecr.us-east-1.amazonaws.com/gopi
+  repository: 438825592133.dkr.ecr.us-east-1.amazonaws.com/gopi
   tag: latest
 containerPort: 80
 # service.yaml
